@@ -126,12 +126,35 @@ function renderCatalog() {
     return;
   }
 
+  let currentCategory = "";
   filteredProducts.forEach(product => {
+
+    //inicio modificación para mostrar la categoría como cabecera
+    const productCategory =
+      product.category || "Otros";
+
+    if (productCategory !== currentCategory) {
+
+      currentCategory = productCategory;
+
+      const categoryRow =
+        document.createElement("tr");
+
+      categoryRow.innerHTML = `
+        <td colspan="2"
+            class="catalog-category-header">
+          ${productCategory.toUpperCase()}
+        </td>
+      `;
+
+      catalogResults.appendChild(categoryRow);
+    }
+    //fin modificación para mostrar la categoría como cabecera
+
     const row = document.createElement("tr");
 
     row.innerHTML = `
       <td>${product.name}</td>
-      <td>${product.category}</td>
       <td>
         <button type="button" class="add-to-list-button">
           Añadir
