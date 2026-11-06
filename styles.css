@@ -399,3 +399,10 @@ h2 {
 
   padding: 10px;
 }
+
+.actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}

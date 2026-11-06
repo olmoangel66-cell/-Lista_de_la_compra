@@ -156,25 +156,31 @@ function renderCatalog() {
     row.innerHTML = `
       <td>${product.name}</td>
       <td>
-        <button type="button" class="add-to-list-button">
-          Añadir
-        </button>
+        <div class="actions-container">
 
-        <button type="button" class="menu-button">
-          ...
-        </button>
-
-        <div class="product-menu" hidden>
-          <button type="button"
-                  class="edit-product-button">
-            ✏️
+          <button type="button" class="add-to-list-button">
+            ➕
           </button>
 
-          <button type="button"
-                  class="delete-product-button">
-            🗑️
+          <button type="button" class="menu-button">
+            ...
           </button>
 
+          <div class="product-menu" hidden>
+
+            <button 
+              type="button"
+              class="edit-product-button">
+              ✏️
+            </button>
+
+            <button 
+              type="button"
+              class="delete-product-button">
+              🗑️
+            </button>
+
+          </div>
         </div>
       </td>
     `;
